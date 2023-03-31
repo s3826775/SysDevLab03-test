@@ -34,3 +34,16 @@ jobs:
       with: 
         name: My-Artifact
         path: Hello.txt
+        if-no-files-found: error
+  
+  build:
+    # Needs will make like a bridge
+    # needs: test
+    runs-on: ubuntu-latest
+    steps:
+      # Check out our repo
+      - uses: actions/checkout@v3
+
+      # Test build
+      - name: Building App
+        run: echo I am building ... 
